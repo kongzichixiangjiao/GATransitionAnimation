@@ -14,7 +14,6 @@ class GANavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
     // 控制转场
     let interactiveTransition = UIPercentDrivenInteractiveTransition()
     
-    
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return GAAnimationViewController(type: GATransitionType.navigationTransition(operation))
     }
@@ -36,6 +35,5 @@ class GANavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
     }
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        
     }
 }

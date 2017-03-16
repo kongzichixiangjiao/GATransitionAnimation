@@ -10,20 +10,14 @@ import UIKit
 
 class SourceViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     let d = GAModalTransitionDelegate()
+    
     @IBAction func present(_ sender: Any) {
+        /*
+         1、transitioningDelegate
+         2、modalPresentationStyle
+         */
         let vc = TargetViewController()
-        
         vc.transitioningDelegate = d
         vc.modalPresentationStyle = .custom
         self.present(vc, animated: true, completion: nil)
@@ -33,6 +27,5 @@ class SourceViewController: UIViewController {
         let vc = TargetViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
 
 }
