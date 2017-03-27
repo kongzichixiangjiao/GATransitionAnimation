@@ -12,7 +12,7 @@ class GANavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
 
     var interactive: Bool = false
     // 控制转场
-    let interactiveTransition = UIPercentDrivenInteractiveTransition()
+    weak var interactiveTransition = UIPercentDrivenInteractiveTransition()
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return GAAnimationViewController(type: GATransitionType.navigationTransition(operation))

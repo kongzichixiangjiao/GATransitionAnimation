@@ -23,7 +23,16 @@ class GATabBarViewController: UITabBarController {
         delegate = tabBarVCDelegate
         
         panGesture.addTarget(self, action: #selector(GATabBarViewController.handlePan(panGesture:)))
-        view.addGestureRecognizer(panGesture)
+        
+        // 测试涂鸦时候注释这句代码
+//        view.addGestureRecognizer(panGesture)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let FPSLab = YWFPSLabel(frame: CGRect())
+        UIApplication.shared.keyWindow!.addSubview(FPSLab)
     }
     
     func handlePan(panGesture: UIPanGestureRecognizer){
@@ -44,18 +53,17 @@ class GATabBarViewController: UITabBarController {
                 }
             }
         case .changed:
-            tabBarVCDelegate.interactionController.update(progress)
+            tabBarVCDelegate.interactionController?.update(progress)
         case .cancelled, .ended:
             if progress > 0.3{
-                tabBarVCDelegate.interactionController.completionSpeed = 0.99
-                tabBarVCDelegate.interactionController.finish()
+                tabBarVCDelegate.interactionController?.completionSpeed = 0.99
+                tabBarVCDelegate.interactionController?.finish()
             }else{
-                tabBarVCDelegate.interactionController.completionSpeed = 0.99
-                tabBarVCDelegate.interactionController.cancel()
+                tabBarVCDelegate.interactionController?.completionSpeed = 0.99
+                tabBarVCDelegate.interactionController?.cancel()
             }
             tabBarVCDelegate.interactive = false
         default: break
         }
     }
-    
 }

@@ -10,8 +10,9 @@ import UIKit
 
 class GATabbarViewControllerDelegate: NSObject, UITabBarControllerDelegate {
     var interactive = false
-    let interactionController = UIPercentDrivenInteractiveTransition()
+    weak var interactionController = UIPercentDrivenInteractiveTransition()
     
+    // 手势执行动画 001
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?{
         let fromIndex = tabBarController.viewControllers!.index(of: fromVC)!
         let toIndex = tabBarController.viewControllers!.index(of: toVC)!
@@ -24,6 +25,13 @@ class GATabbarViewControllerDelegate: NSObject, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning?{
         return interactive ? interactionController : nil
+    }
+    
+    // 002 tabbar切换动画
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        tabBarController.view.layer.add(transition, forKey: nil)
     }
 
 }

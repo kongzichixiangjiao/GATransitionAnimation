@@ -12,7 +12,8 @@ class GANavigationController: UINavigationController {
     
     var interactive: Bool = false
     // 控制转场 添加手势时会用到
-    let interactiveTransition = UIPercentDrivenInteractiveTransition()
+//    weak var interactiveTransition = UIPercentDrivenInteractiveTransition()
+    let interactiveTransition: UIPercentDrivenInteractiveTransition? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
