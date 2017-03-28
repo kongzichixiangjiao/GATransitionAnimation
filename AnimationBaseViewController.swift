@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TargetViewController: UIViewController {
+class AnimationBaseViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,7 +42,7 @@ class TargetViewController: UIViewController {
     }
 }
 
-extension TargetViewController: UITableViewDelegate, UITableViewDataSource {
+extension AnimationBaseViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")

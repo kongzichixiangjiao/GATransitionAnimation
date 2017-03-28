@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item2-->
+        <!--coreAnimation基础-->
         <scene sceneID="o8H-aP-DBb">
             <objects>
                 <navigationController id="jyn-9W-9he" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item2" id="WsV-pR-jpz"/>
+                    <tabBarItem key="tabBarItem" title="coreAnimation基础" id="WsV-pR-jpz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Xf-UJ-mRm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="-1922" y="1085"/>
         </scene>
-        <!--Item 3-->
+        <!--富文本-->
         <scene sceneID="3pV-aM-0JF">
             <objects>
                 <viewController id="m6k-Ub-lav" customClass="HomeViewController" customModule="GATransitionAnimation" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,11 +60,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.4552999325" green="0.67284976490000004" blue="0.99116584129999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 3" id="OH3-tM-hjz"/>
+                    <tabBarItem key="tabBarItem" title="富文本" id="OH3-tM-hjz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Urd-zF-Edv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282.39999999999998" y="1098.8005997001501"/>
+            <point key="canvasLocation" x="-2828" y="1084"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="Jab-S7-zfG">
+            <objects>
+                <tableViewController id="wzG-WB-lGr" customClass="AnimationsViewController" customModule="GATransitionAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9wD-9e-Jr6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="animationCell" id="S1g-MM-YUV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S1g-MM-YUV" id="rm5-lK-eyL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wzG-WB-lGr" id="NnS-hW-BuZ"/>
+                            <outlet property="delegate" destination="wzG-WB-lGr" id="Mwd-s9-qKW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="T8B-0e-4DG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Z2-KG-yNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="1077"/>
+        </scene>
+        <!--动画效果-->
+        <scene sceneID="aIa-6j-lvS">
+            <objects>
+                <navigationController id="xTK-Sn-DJm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="动画效果" id="ru5-VT-fBo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wis-lx-qEG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wzG-WB-lGr" kind="relationship" relationship="rootViewController" id="rHc-G5-DVf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NxU-4w-cvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-358" y="1076"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="lhA-6o-Xre">
@@ -103,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="-1922" y="1796"/>
         </scene>
-        <!--Target View Controller-->
+        <!--Animation Base View Controller-->
         <scene sceneID="S0v-ca-pfk">
             <objects>
-                <viewController storyboardIdentifier="TargetViewController" id="p8w-mv-ebg" customClass="TargetViewController" customModule="GATransitionAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimationBaseViewController" id="p8w-mv-ebg" customClass="AnimationBaseViewController" customModule="GATransitionAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MCS-5D-6GQ"/>
                         <viewControllerLayoutGuide type="bottom" id="2td-AM-xNN"/>
@@ -161,14 +207,52 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="m6k-Ub-lav" kind="relationship" relationship="viewControllers" id="0u6-Pa-bz8"/>
                         <segue destination="djn-7M-sCz" kind="relationship" relationship="viewControllers" id="scg-Js-H9g"/>
                         <segue destination="jyn-9W-9he" kind="relationship" relationship="viewControllers" id="OmH-k0-aib"/>
+                        <segue destination="U1N-jB-jjd" kind="relationship" relationship="viewControllers" id="6ja-oZ-JIy"/>
+                        <segue destination="xTK-Sn-DJm" kind="relationship" relationship="viewControllers" id="w3Y-Nv-4Ek"/>
+                        <segue destination="m6k-Ub-lav" kind="relationship" relationship="viewControllers" id="hv2-YH-yww"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5U-eD-TRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1111" y="328"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="JKH-wi-Lr8">
+            <objects>
+                <navigationController id="U1N-jB-jjd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hfS-fu-TGw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1id-ml-WGe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HxR-u4-EKu" kind="relationship" relationship="rootViewController" id="YhE-7A-X47"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xg7-MI-OCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-340" y="328"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LRf-rC-HH9">
+            <objects>
+                <viewController id="HxR-u4-EKu" customClass="GLViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ax7-Rw-1ar"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hi1-Nb-BI7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c6L-WB-fJX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9vw-15-SoT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBt-qp-o6X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="328"/>
         </scene>
     </scenes>
 </document>

@@ -37,9 +37,9 @@ class EmitterViewController: UIViewController {
         // 透明度递减的速度
         emitterCell.alphaSpeed = -0.4
         // 发射的速度
-        emitterCell.velocity = 50
+        emitterCell.velocity = 2
         // 发射的范围
-        emitterCell.velocityRange = 50
+        emitterCell.velocityRange = 250
         // 发射的角度  // CGFloat.GA_M_PI / 2
         emitterCell.emissionRange = CGFloat.GA_M_PI
         // 发射的cell
